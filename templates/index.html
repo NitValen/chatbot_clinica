@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Chatbot</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		#chatbox {
+			max-height: 290px;
+			height: 290px;
+			overflow-y:auto;
+		}
+		.bubbleWrapper {
+			padding: 10px 10px;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+			align-self: flex-end;
+		  color: #fff;
+		}
+		.inlineContainer {
+		  display: inline-flex;
+		}
+		.inlineContainer.own {
+		  flex-direction: row-reverse;
+		}
+		.inlineIcon {
+		  width:20px;
+		  object-fit: contain;
+		}
+		.ownBubble {
+			min-width: 60px;
+			max-width: 700px;
+			padding: 14px 18px;
+		        margin: 6px 8px;
+			border-radius: 16px 16px 0 16px;
+			border: none;
+		 
+		}
+		.otherBubble {
+			min-width: 60px;
+			max-width: 700px;
+			padding: 14px 18px;
+		        margin: 6px 8px;
+			border-radius: 16px 16px 16px 0;
+			border: none;
+		  
+		}
+		.own {
+			align-self: flex-end;
+		}
+		.other {
+			align-self: flex-start;
+		}
+		span.own,
+		span.other{
+		  font-size: 14px;
+		  color: grey;
+		}
+	</style>
+
+</head>
+
+<body>
+  <div class="container">
+  	<div class="row">
+  			<div class="col-md-2"></div>
+  			<div class="col-md-8">
+  				<center>
+  				<br>
+	  			<img src="static/logo.png" width="70%" height="70%">
+	  			<br><br>
+	  			<h3>Bienvenido a su asistente en línea ! </h3>
+	  			<h6>Aquí puede solicitar toda la información sobre la Clinica Peruano Suiza</h6>
+	  			</center>
+	  		</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-md-2"></div>
+	  	<div class="col-md-8">
+	  		<div id="chatbox">
+	  			<div class="bubbleWrapper">
+						<div class="inlineContainer">
+							<div class="otherBubble other bg-primary">
+								Hola, estoy aquí para responder a sus preguntas.
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="input-group mb-3" id="userInput">
+				  <input type="text" id="textInput" class="form-control" placeholder="Message" aria-label="Message" aria-describedby="basic-addon2">
+				  <div class="input-group-append">
+				    <button onclick="getBotResponse()" class="btn btn-outline-secondary" type="button">Envoyer</button>
+				  </div>
+				</div>	
+  		</div>
+  	</div>
+  </div>
+
+	<button onclick="window.open('https://cps.com.pe/');" type="button" class="btn btn-default border" style="margin-left:10px;">
+		  <img src="static/home.svg"></span>
+		</button>
+
+	<button onclick="window.open('https://www.facebook.com/clinica.peruanosuiza/');" type="button" class="btn btn-primary border" style="margin-left:10px">
+	  <i class="fa fa-facebook-square" style="font-size:24px"></i>
+	</button>
+  <script>
+		function getBotResponse() {
+                    i++;
+                    var rawText = $("#textInput").val();
+                    var userHtml = '<div class="bubbleWrapper"><div class="inlineContainer own"><div class="ownBubble own bg-secondary">'+rawText+ "</div></div></div>"
+	            $("#textInput").val("");
+	            $("#chatbox").append(userHtml);
+                    $.get("/get", { msg: rawText }).done(function (data) {
+                      var botHtml = '<div class="bubbleWrapper" id="message'+i+'"><div class="inlineContainer other"><div class="otherBubble other bg-primary">' + data + "</div></div></div>";
+	              $("#chatbox").append(botHtml);
+	              document
+	                  .getElementById("message"+i)
+	                  .scrollIntoView({ block: "end", behavior: "smooth" });
+                    });
+                }
+                var i=0;
+                $("#textInput").keypress(function (e) {
+                    if (e.which == 13) {
+                        getBotResponse(i);
+                    }
+                });
+  </script>
+</body>
+</html>
