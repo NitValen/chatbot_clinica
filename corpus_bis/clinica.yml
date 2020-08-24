@@ -1,5 +1,5 @@
 categories:
-- test
+- clinica
 conversations:
 - - Hola
   - Gracias por escribirnos y confiar en Clínica Peruano Suiza! Nuestros representantes comerciales se pondrá en contacto. Recuerda que tambien puedes contactarnos a los siguientes números 084 - 242114
@@ -9,10 +9,8 @@ conversations:
   - Buenas tardes, aún no realizamos pruebas moleculares, solamente las pruebas rápidas.
 - - A que cuenta o como se hace el deposito ?
   - Tendríamos que agendarle la cita para poder brindarle el número de cuenta
-- - Nesecito saber si hacen examen de TAC del pulmon
-  - Buenas noches, si realizamos el examen
-  - Me podria indicar cuanto seria el costo
-  - En costo es de S/. 500.00
+- - costo de TAC del pulmon
+  - El costo es de S/. 500.00
 - - Buenos dias, quisiera saber cuanto es el costo de una tomografia de torax sin contraste, gracias
   - Buenas noches, el costo de dicha tomografía es de S/. 500.
 - - Buenas noches quisiera saber el costo de sus pruebas rapidas a domicilo
@@ -73,3 +71,14 @@ conversations:
   - Por favor envíe su CV a potencialhumano@cps.com.pe
 - -  quisiera saber el costo de la prueba covid 
   - El costo de la prueba rápida para descarte de la COVID-19 es de S/. 120.00 y la realizamos de lunes a sábado de 08:00 a 15:00 horas, usted puede reservar su cita y tener acceso directo haciendo un pago previo mediante depósito o también podemos enviar mediante correo electrónico un link para que pueda hacerlo, en caso no desee acceder a este beneficio tendría que apersonarse en el horario indicado y hacer la cola para su atención; el tiempo promedio de espera en la cola es de una hora.
+- - cual es el costo de la tomografía
+  -  el costo de la tomografía pulmonar es de 500 soles, las placas se le entrega en el momento, el informe médico y el CD se le entrega en 24 horas
+- - el precio de las pruebas rápidas a domicilio
+  - La toma de muestra a domicilio de la prueba rápida para descarte la COVID-19  la realizamos en el horario de 19:30 a 21:30 horas todos los días de la semana, el costo es de S/.370.00 por cada prueba que se realice. Para poder programar la cita deberá realizar el pago mediante un pago electrónico, este enlace se lo enviamos por correo electrónico, después de hacer la confirmación de pago se procede a programar la visita a su domicilio.
+- - precio prueba rápida
+  - El costo de la prueba rápida para descarte de la COVID-19 es de S/. 120.00 y la realizamos de lunes a sábado de 08:00 a 15:00 horas, usted puede reservar su cita y tener acceso directo haciendo un pago previo mediante depósito o también podemos enviar mediante correo electrónico un link para que pueda hacerlo, en caso no desee acceder a este beneficio tendría que apersonarse en el horario indicado y hacer la cola para su atención; el tiempo promedio de espera en la cola es de una hora.
+- - costo prueba a domicilio
+  - La toma de muestra a domicilio de la prueba rápida para descarte la COVID-19  la realizamos en el horario de 19:30 a 21:30 horas todos los días de la semana, el costo es de S/.370.00 por cada prueba que se realice. Para poder programar la cita deberá realizar el pago mediante un pago electrónico, este enlace se lo enviamos por correo electrónico, después de hacer la confirmación de pago se procede a programar la visita a su domicilio.
+- - precio prueba a domicilio
+  - La toma de muestra a domicilio de la prueba rápida para descarte la COVID-19  la realizamos en el horario de 19:30 a 21:30 horas todos los días de la semana, el costo es de S/.370.00 por cada prueba que se realice. Para poder programar la cita deberá realizar el pago mediante un pago electrónico, este enlace se lo enviamos por correo electrónico, después de hacer la confirmación de pago se procede a programar la visita a su domicilio.
+  
