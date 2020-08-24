@@ -120,26 +120,7 @@
 	  <i class="fa fa-facebook-square" style="font-size:24px"></i>
 	</button>
   <script>
-		function getBotResponse() {
-                    i++;
-                    var rawText = $("#textInput").val();
-                    var userHtml = '<div class="bubbleWrapper"><div class="inlineContainer own"><div class="ownBubble own bg-secondary">'+rawText+ "</div></div></div>"
-	            $("#textInput").val("");
-	            $("#chatbox").append(userHtml);
-                    $.get("/get", { msg: rawText }).done(function (data) {
-                      var botHtml = '<div class="bubbleWrapper" id="message'+i+'"><div class="inlineContainer other"><div class="otherBubble other bg-primary">' + data + "</div></div></div>";
-	              $("#chatbox").append(botHtml);
-	              document
-	                  .getElementById("message"+i)
-	                  .scrollIntoView({ block: "end", behavior: "smooth" });
-                    });
-                }
-                var i=0;
-                $("#textInput").keypress(function (e) {
-                    if (e.which == 13) {
-                        getBotResponse(i);
-                    }
-                });
+  	var _0x4392=['val','#textInput','smooth','get','message','#chatbox','which','</div></div></div>','keypress','getElementById','done','<div\x20class=\x22bubbleWrapper\x22\x20id=\x22message','end','append'];(function(_0x4ae637,_0x439295){var _0x47c884=function(_0x5763be){while(--_0x5763be){_0x4ae637['push'](_0x4ae637['shift']());}};_0x47c884(++_0x439295);}(_0x4392,0x19e));var _0x47c8=function(_0x4ae637,_0x439295){_0x4ae637=_0x4ae637-0x0;var _0x47c884=_0x4392[_0x4ae637];return _0x47c884;};function getBotResponse(){i++;var _0x2fae4c=$('#textInput')[_0x47c8('0x6')](),_0x36958a='<div\x20class=\x22bubbleWrapper\x22><div\x20class=\x22inlineContainer\x20own\x22><div\x20class=\x22ownBubble\x20own\x20bg-secondary\x22>'+_0x2fae4c+_0x47c8('0xd');$('#textInput')[_0x47c8('0x6')](''),$('#chatbox')[_0x47c8('0x5')](_0x36958a),$[_0x47c8('0x9')]('/get',{'msg':_0x2fae4c})[_0x47c8('0x2')](function(_0x333ebc){var _0x159496=_0x47c8('0x3')+i+'\x22><div\x20class=\x22inlineContainer\x20other\x22><div\x20class=\x22otherBubble\x20other\x20bg-primary\x22>'+_0x333ebc+_0x47c8('0xd');$(_0x47c8('0xb'))[_0x47c8('0x5')](_0x159496),document[_0x47c8('0x1')](_0x47c8('0xa')+i)['scrollIntoView']({'block':_0x47c8('0x4'),'behavior':_0x47c8('0x8')});});}var i=0x0;$(_0x47c8('0x7'))[_0x47c8('0x0')](function(_0x56c568){_0x56c568[_0x47c8('0xc')]==0xd&&getBotResponse(i);});
   </script>
 </body>
 </html>
