@@ -20,7 +20,7 @@ class MongoDatabaseAdapter(StorageAdapter):
         from pymongo.errors import OperationFailure
 
         self.database_uri = kwargs.get(
-            'database_uri', 'mongodb://heroku_24p5px6v:n51t5iprt61b4s7v7gejqht500@ds127644.mlab.com:27644/heroku_24p5px6v'
+            'database_uri', 'mongodb://valentin:1234valentin@ds127644.mlab.com:27644/heroku_24p5px6v'
         )
 
         # Use the default host and port
