@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 chatbot = ChatBot(
     'Clinica',
+    storage_adapter='chatterbot_bis.storage.mongodb.MongoDatabaseAdapter',
     preprocessors=[
         'chatterbot_bis.preprocessors.convert_to_ascii',
         'chatterbot_bis.preprocessors.unescape_html',
@@ -13,9 +14,8 @@ chatbot = ChatBot(
     ],
     logic_adapters=[
         {
-            'import_path': 'chatterbot.logic.BestMatch',
+            'import_path': 'chatterbot.logic.best_match.BestMatch',
             'statement_comparison_function': 'chatterbot_bis.comparisons.JaccardSimilarity',
-            #'response_selection_method': 'chatterbot.response_selection.get_first_response',
             'default_response': 'Lo siento, pero no entiendo.',
             'maximum_similarity_threshold': 0.90
        }
