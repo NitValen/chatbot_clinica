@@ -1,8 +1,5 @@
 from chatterbot.storage import StorageAdapter
-import os
-import psycopg2
-DATABASE_URL = 'postgres://fazvhwwhnoqezo:c4916bceb6968d3f856f01aebf01baa770f299559ff7e3a2b504ee3489553b4a@ec2-50-19-26-235.compute-1.amazonaws.com:5432/dcped77jeusohr'
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 
 class SQLStorageAdapter(StorageAdapter):
     """
@@ -23,7 +20,7 @@ class SQLStorageAdapter(StorageAdapter):
         from sqlalchemy.orm import sessionmaker
 
         self.database_uri = kwargs.get('database_uri', 'postgres://fazvhwwhnoqezo:c4916bceb6968d3f856f01aebf01baa770f299559ff7e3a2b504ee3489553b4a@ec2-50-19-26-235.compute-1.amazonaws.com:5432/dcped77jeusohr')
-        
+
         # None results in a sqlite in-memory database as the default
         if self.database_uri is None:
             self.database_uri = 'sqlite://'
