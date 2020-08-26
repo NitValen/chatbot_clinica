@@ -26,10 +26,11 @@ chatbot = ChatBot(
 )
 
 
-#trainer = ChatterBotCorpusTrainer(chatbot)
-trainer = ListTrainer(chatbot) #temporaire
-#trainer.train('corpus_bis.clinica')
+trainer = ChatterBotCorpusTrainer(chatbot)
 
+trainer.train('corpus_bis.clinica')
+"""
+trainer = ListTrainer(chatbot) #temporaire
 trainer.train([
     "How are you?",
     "I am good.",
@@ -37,7 +38,7 @@ trainer.train([
     "Thank you",
     "You are welcome.",
 ])
-
+"""
 
 @app.route("/")
 def index():
