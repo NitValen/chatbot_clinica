@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import os
+from chatterbot.trainers import ListTrainer #temporaire
 
 app = Flask(__name__)
 
@@ -25,8 +26,8 @@ chatbot = ChatBot(
 )
 
 
-trainer = ChatterBotCorpusTrainer(chatbot)
-
+#trainer = ChatterBotCorpusTrainer(chatbot)
+trainer = ListTrainer(chatbot) #temporaire
 #trainer.train('corpus_bis.clinica')
 
 trainer.train([
