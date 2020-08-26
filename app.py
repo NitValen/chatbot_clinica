@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+import os
 
 app = Flask(__name__)
 
 chatbot = ChatBot(
     'Clinica',
     storage_adapter='chatterbot_bis.storage.sql_storage.SQLStorageAdapter',
+    database_uri=os.environ['DATABASE_URL']
     preprocessors=[
         'chatterbot_bis.preprocessors.convert_to_ascii',
         'chatterbot_bis.preprocessors.unescape_html',
