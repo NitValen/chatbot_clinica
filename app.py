@@ -8,7 +8,7 @@ app = Flask(__name__)
 chatbot = ChatBot(
     'Clinica',
     storage_adapter='chatterbot_bis.storage.sql_storage.SQLStorageAdapter',
-    database_uri=os.environ['DATABASE_URL']
+    database_uri=os.environ['DATABASE_URL'],
     preprocessors=[
         'chatterbot_bis.preprocessors.convert_to_ascii',
         'chatterbot_bis.preprocessors.unescape_html',
