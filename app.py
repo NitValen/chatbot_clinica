@@ -28,7 +28,12 @@ chatbot = ChatBot(
 trainer = ChatterBotCorpusTrainer(chatbot)
 
 #trainer.train('corpus_bis.clinica')
-trainer.train(['what is your name?', 'My name is Python-BOT'])
+
+trainer.train([
+    "Hi there!",
+    "Hello",
+])
+
 @app.route("/")
 def index():
     return render_template("index.html")
