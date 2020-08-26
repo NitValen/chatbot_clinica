@@ -29,7 +29,14 @@ trainer = ChatterBotCorpusTrainer(chatbot)
 
 #trainer.train('corpus_bis.clinica')
 
-trainer.train("Hi there!","Hello")
+trainer.train([
+    "How are you?",
+    "I am good.",
+    "That is good to hear.",
+    "Thank you",
+    "You are welcome.",
+])
+
 
 @app.route("/")
 def index():
