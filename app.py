@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 chatbot = ChatBot(
     'Clinica',
-    storage_adapter='chatterbot_bis.storage.mongodb.MongoDatabaseAdapter',
+    storage_adapter='chatterbot_bis.storage.sql_storage.SQLStorageAdapter',
     preprocessors=[
         'chatterbot_bis.preprocessors.convert_to_ascii',
         'chatterbot_bis.preprocessors.unescape_html',
