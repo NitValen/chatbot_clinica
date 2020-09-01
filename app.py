@@ -29,18 +29,6 @@ trainer = ChatterBotCorpusTrainer(chatbot)
 
 trainer.train('corpus_bis.clinica')
 
-"""
-trainer = ListTrainer(chatbot) #temporaire
-trainer.train([
-    "How are you?",
-    "I am good.",
-    "That is good to hear.",
-    "Thank you",
-    "You are welcome.",
-])
-
-"""
-
 @app.route("/")
 def index():
     return render_template("index.html")
