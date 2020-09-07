@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 chatbot = ChatBot(
     'Clinica',
-    language = 'spanish',
     storage_adapter='chatterbot_bis.storage.sql_storage.SQLStorageAdapter',
     database_uri=os.environ['DATABASE_URL'],
     preprocessors=[
@@ -20,6 +19,7 @@ chatbot = ChatBot(
         {
             'import_path': 'chatterbot.logic.best_match.BestMatch',
             'statement_comparison_function': 'chatterbot_bis.comparisons.JaccardSimilarity',
+            'language' = 'spanish',
             'default_response': 'Lo siento, pero no entiendo.',
             'maximum_similarity_threshold': 0.90
        }
