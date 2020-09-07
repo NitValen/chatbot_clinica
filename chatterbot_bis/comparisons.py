@@ -153,7 +153,4 @@ class JaccardSimilarity(Comparator):
 # ---------------------------------------- #
 
 
-levenshtein_distance = LevenshteinDistance()
-synset_distance = SynsetDistance()
-sentiment_comparison = SentimentComparison()
 jaccard_similarity = JaccardSimilarity()
