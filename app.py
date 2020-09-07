@@ -19,7 +19,7 @@ chatbot = ChatBot(
         {
             'import_path': 'chatterbot.logic.best_match.BestMatch',
             'statement_comparison_function': 'chatterbot_bis.comparisons.JaccardSimilarity',
-            'language' = 'spanish',
+            'language': 'spanish',
             'default_response': 'Lo siento, pero no entiendo.',
             'maximum_similarity_threshold': 0.90
        }
