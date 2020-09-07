@@ -90,7 +90,7 @@ class JaccardSimilarity(Comparator):
         Get the list of stopwords from the NLTK corpus.
         """
         if self.stopwords is None:
-            self.stopwords = stopwords.words(self.language.SPANISH_NAME.lower())
+            self.stopwords = stopwords.words(self.language.ENGLISH_NAME.lower())
 
         return self.stopwords
 
