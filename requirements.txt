@@ -37,3 +37,4 @@ tqdm==4.48.2
 urllib3==1.25.10
 wasabi==0.7.1
 Werkzeug==1.0.1
+nltk==3.5
