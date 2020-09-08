@@ -10,7 +10,7 @@ class Comparator:
 
     def __init__(self, language):
 
-        self.language = language
+        self.language = "spanish" #language
 
     def __call__(self, statement_a, statement_b):
         return self.compare(statement_a, statement_b)
@@ -118,8 +118,8 @@ class JaccardSimilarity(Comparator):
             )
             raise OptionalDependencyImportError(message)
         
-        #self.nlp = spacy.load(self.language.ISO_639_1)
-        self.nlp = spacy.load("es")
+        self.nlp = spacy.load(self.language.ISO_639_1)
+
     def compare(self, statement_a, statement_b):
         """
         Return the calculated similarity of two
