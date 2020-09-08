@@ -117,9 +117,9 @@ class JaccardSimilarity(Comparator):
                 'pip3 install "spacy>=2.1,<2.2"'
             )
             raise OptionalDependencyImportError(message)
-
-        self.nlp = spacy.load(self.language.ISO_639_1)
-
+        
+        #self.nlp = spacy.load(self.language.ISO_639_1)
+        self.nlp = spacy.load("es")
     def compare(self, statement_a, statement_b):
         """
         Return the calculated similarity of two
