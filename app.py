@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import os
-from chatterbot.trainers import ListTrainer #temporaire
+from chatterbot.conversation import Statement
 
 app = Flask(__name__)
 
@@ -35,6 +35,6 @@ def index():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(chatbot.get_response(userText))
+    return str(chatbot.generate_response(Statement(userText)))
 if __name__ == "__main__":
     app.run()
