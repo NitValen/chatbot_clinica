@@ -28,7 +28,6 @@ chatbot = ChatBot(
 trainer = ChatterBotCorpusTrainer(chatbot)
 
 trainer.train('corpus_bis.clinica')
-trainer.train('corpus_bis.basic')
 
 @app.route("/")
 def index():
@@ -36,6 +35,6 @@ def index():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(chatbot.get_response(userText,tags='basic'))
+    return str(chatbot.generate_response(Statement(userText)))
 if __name__ == "__main__":
     app.run()
