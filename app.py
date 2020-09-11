@@ -17,10 +17,10 @@ chatbot = ChatBot(
     ],
     logic_adapters=[
         {
-            'chatterbot.logic.best_match.BestMatch',
+            'import_path': 'chatterbot.logic.best_match.BestMatch',
             'statement_comparison_function': 'chatterbot_bis.comparisons.JaccardSimilarity',
             'default_response': 'Lo siento, pero no entiendo.',
-            'maximum_similarity_threshold': 0.90
+            'maximum_similarity_threshold': 0.70
        }
     ]
 )
