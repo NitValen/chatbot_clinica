@@ -1,4 +1,4 @@
-from chatterbot_bis.storage import StorageAdapter
+from chatterbot_bis.storage.storage_adapter import StorageAdapter
 
 
 class SQLStorageAdapter(StorageAdapter):
